@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>FINAL PROJECT</title>
+    <title>LOADING PAGE</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,7 +16,7 @@
                         inter: ['Inter', 'sans-serif']
                     },
                     backgroundImage: {
-                        'login': "linear-gradient(0deg, rgba(65, 44, 58, 0.8), rgba(65, 44, 58, 0.8)), url('./Pictures/background.jpg')",
+                        'login': "linear-gradient(0deg, rgba(65, 44, 58, 0.8), rgba(65, 44, 58, 0.8)), url('/Pictures/background.jpg')",
                     }
                 }
             }
@@ -38,7 +38,7 @@
 
 <body class="bg-login bg-cover bg-center min-h-screen overflow-hidden block md:hidden flex flex-col justify-start items-start">
     <div class="w-full h-[1.5rem] mt-6 px-[1rem] flex justify-between items-center">
-        <p class="font-inter font-medium text-[1.5rem] text-white">
+        <p id="time" class="font-inter font-medium text-[1.5rem] text-white">
             10:00
         </p>
         <img src="./Icons/header-symbols.svg"

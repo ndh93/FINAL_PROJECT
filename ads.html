@@ -1,108 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mini Player Demo</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MUSIC PAGE</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- TailwindCSS -->
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-body { background: #0E1920; color: white; font-family: 'Vazirmatn', sans-serif; }
-#mini-player { background: #252525/90; border-radius: 0.5rem; padding: 1rem; }
-#bar-before { height: 3px; background: #EE10B0; border-radius: 2px; }
-#bar-after { height: 3px; background: #630A4A; border-radius: 2px; }
-#progress-dot { width: 7px; height: 7px; background: #EE10B0; border-radius: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); }
-</style>
-</head>
-<body>
-
-<h1 class="text-2xl font-bold mb-4">Album Demo</h1>
-
-<!-- Mini Player -->
-<div id="mini-player" class="fixed bottom-4 left-4 right-4 h-[7rem] flex justify-between items-center">
-    <div class="flex items-center gap-4">
-        <img src="Pictures/eminem-show.jpg" class="w-16 h-16 rounded" id="mini-thumb">
-        <div>
-            <p id="mini-title">White America</p>
-            <p id="mini-artist">Eminem</p>
-        </div>
-    </div>
-    <div class="flex items-center gap-4">
-        <button id="play-pause"><img id="play-icon" src="Icons/iconamoon_player-play-fill.svg" class="w-8 h-8"></button>
-    </div>
-</div>
-
-<div class="fixed bottom-0 left-0 right-0 h-1">
-    <div id="bar-before" style="width:0%;"></div>
-    <div id="bar-after" style="width:100%;"></div>
-    <div id="progress-dot" style="left:0%;"></div>
-</div>
-
-<audio id="audio-player" src="Music/White-America.mp3"></audio>
 
 <script>
-const audio = document.getElementById('audio-player');
-const playPauseBtn = document.getElementById('play-pause');
-const playIcon = document.getElementById('play-icon');
-const barBefore = document.getElementById('bar-before');
-const barAfter = document.getElementById('bar-after');
-const progressDot = document.getElementById('progress-dot');
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    vazirmatn: ['Vazirmatn', 'sans-serif'],
+                    inter: ['Inter', 'sans-serif']
+                },
+                colors: {
+                    'text-blue': '#0E9EEF',
+                    'text-pink': '#EE10B0',
+                    "bg-songs": '#1E1E1E',
+                    "bg-music": '#630A4A',
+                },
+            }
+        }
+    };
+</script>
 
-let isPlaying = false;
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { font-size:10px; }
+    @media (max-width:375px){ html{ font-size:8.5px; } }
+</style>
+</head>
 
-playPauseBtn.addEventListener('click', ()=>{
-    if(!isPlaying){
-        audio.play();
-        isPlaying=true;
-        playIcon.src="Icons/iconamoon_player-pause-fill-pink.svg";
-    } else {
-        audio.pause();
-        isPlaying=false;
-        playIcon.src="Icons/iconamoon_player-play-fill.svg";
-    }
-});
+<body class="bg-black text-white">
 
-audio.addEventListener('timeupdate', ()=>{
-    const percent = (audio.currentTime / audio.duration)*100 || 0;
-    barBefore.style.width = percent + '%';
-    barAfter.style.width = (100-percent) + '%';
-    progressDot.style.left = percent + '%';
-});
+<!-- Nút chuyển Song / Lyrics -->
+<div class="flex justify-center gap-4 p-4 bg-gray-800">
+    <button id="btn-song" class="px-4 py-2 bg-blue-500 rounded">Song</button>
+    <button id="btn-lyrics" class="px-4 py-2 bg-pink-500 rounded">Lyrics</button>
+</div>
+
+<!-- MUSIC 1 -->
+<div id="music1" class="p-4">
+    <!-- Nội dung MUSIC 1 bạn đã lưu -->
+    <h2 class="text-3xl font-bold text-blue-400">Music 1</h2>
+    <p>Nội dung giao diện MUSIC 1:</p>
+    <div class="w-full h-screen bg-music-page bg-cover bg-center">
+        <!-- Chèn toàn bộ layout MUSIC 1 ở đây (header, bài hát, progress, controls…) -->
+        <p class="mt-2">Đây là MUSIC 1 (giao diện bài hát)</p>
+    </div>
+</div>
+
+<!-- MUSIC 2 -->
+<div id="music2" class="p-4 hidden">
+    <!-- Nội dung MUSIC 2 bạn đã lưu -->
+    <h2 class="text-3xl font-bold text-pink-400">Music 2</h2>
+    <p>Nội dung giao diện MUSIC 2:</p>
+    <div class="w-full h-screen bg-music-page bg-cover bg-center">
+        <!-- Chèn toàn bộ layout MUSIC 2 ở đây (Lyrics, ảnh, progress, controls…) -->
+        <p class="mt-2">Đây là MUSIC 2 (giao diện Lyrics)</p>
+    </div>
+</div>
+
+<script>
+    const btnSong = document.getElementById("btn-song");
+    const btnLyrics = document.getElementById("btn-lyrics");
+    const music1 = document.getElementById("music1");
+    const music2 = document.getElementById("music2");
+
+    btnSong.addEventListener("click", () => {
+        music1.classList.remove("hidden");
+        music2.classList.add("hidden");
+    });
+
+    btnLyrics.addEventListener("click", () => {
+        music1.classList.add("hidden");
+        music2.classList.remove("hidden");
+    });
 </script>
 
 </body>
 </html>
-
-
-
-
-        <div class="w-full h-[17rem] mt-6 flex flex-col justify-between items-center px-[2.7rem]">
-            <div class="w-full h-[5rem] flex flex-col justify-between items-center ">
-                <div id="progress-container" class="bg-black rounded-full w-full h-[1rem] overflow-visible z-50">
-                </div>
-                <div class="w-full h-[3rem] flex justify-between items-center">
-                    <p id="current-time" class="font-vazirmatn font-medium text-[1.4rem] text-white">0:00</p>
-                    <p id="duration" class="font-vazirmatn font-medium text-[1.4rem] text-white">4:03</p>
-                </div>
-            </div>
-            <div class="w-full h-[8rem] flex justify-center items-center gap-[4rem] mt-4 ">
-                 <button id = "prev-btn" onclick="prevSong()" class="w-[5rem] h-[5rem]">
-                     <img src="Icons/fluent_next-16-filled.svg" 
-                          alt=""
-                     />
-                 </button>
-                 <button id = "play-pause" onclick="togglePlay()" class="w-[5rem] h-[5rem]">
-                     <img id = "pause-icon" src="Icons/iconamoon_player-pause-fill-pink.svg" 
-                          alt="Pause"
-                     />
-                     <img id = "play-icon" src="Icons/iconamoon_player-play-fill-pink.svg" 
-                          alt="Play" style="display:none;"
-                     />
-                 </button>
-                 <button id = "next-btn" onclick="nextSong()" class="w-[5rem] h-[5rem] rotate-180">
-                     <img src="Icons/fluent_next-16-filled.svg" 
-                          alt=""
-                     />
-                 </button>
-
-            </div>
-        </div>

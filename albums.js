@@ -114,3 +114,16 @@ function playAll(){
     }
 }
 
+// -------------------- CLICK MINI PLAYER CHUYỂN MUSIC PAGE --------------------
+const miniPlayer = document.getElementById("mini-player");
+
+if (miniPlayer) {
+  miniPlayer.addEventListener("click", () => {
+    localStorage.setItem("currentSongIndex", currentSong);
+    localStorage.setItem("currentSongTitle", titles[currentSong]);
+    localStorage.setItem("currentSongArtist", artists[currentSong]);
+    localStorage.setItem("currentSongFile", files[currentSong]);
+
+    window.location.href = "music-page.html"; 
+  });
+}

@@ -26,10 +26,10 @@
                         "bg-music": '#630A4A',
                     },
                     backgroundImage: {
-                        'music-page': "linear-gradient(270deg, rgba(65, 44, 58, 0.3) -11.05%, rgba(14, 25, 32, 0.3) 133.84%), url('Pictures/eminem-show-19.jpg')",
+                        'music-page': "linear-gradient(270deg, rgba(65, 44, 58, 0.3) -11.05%, rgba(14, 25, 32, 0.3) 133.84%), url('./Pictures/eminem-show-19.jpg')",
                         'content-artist': "linear-gradient(90.22deg, rgba(12, 11, 11, 0.8) 12.99%, rgba(0, 0, 0, 0.4) 114.84%)",
                         'logo': 'linear-gradient(90deg, #EE10B0 -7.89%, #0E9EEF 132.33%)',
-                        'thumbnail':  "url('Pictures/eminem_artist.png')",
+                        'thumbnail':  "url('./Pictures/eminem_artist.png')",
                     },
                 }
             }
@@ -51,102 +51,211 @@
         }
     </style>
 </head>
-<body class="w-full h-screen bg-music-page bg-cover bg-center">
-    <div class="absolute inset-0 backdrop-blur-[3rem] flex flex-col justify-start items-center">
-        <!-- Header -->
-        <div class="w-full h-[1.5rem] mt-[1.6rem] px-[1rem] flex justify-between items-center">
-            <p class="font-inter font-medium text-[1.5rem] text-white">
-                10:00
-            </p>
-            <img src="Icons/header-symbols.svg"
-                    alt="" 
-                    class="w-[5.5rem] h-[1.5rem]"
-            />
-        </div>
-        <!-- Navigation Menu -->
-        <div class="w-full h-[5rem] mt-[1.6rem] flex justify-between items-center">
-            <img src="Icons/ion_arrow-back-outline.svg"
-                    alt=""
-                    class="w-[3.5rem] h-[3.5rem] ml-[1rem]"
-            />
-            <p class="font-vazirmatn font-extrabold text-[3.2rem] text-text-blue">
-                Mu<span class="text-text-pink">sic</span>
-            </p>
-            <img src="Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
-                    alt=""
-                    class="w-[3.5rem] h-[3.5rem]"
-            />
-        </div>
-        <div class="w-[35rem] h-[35rem] mt-[3rem] flex justify-center items-center">
-            <img src="Pictures/eminem-show.jpg"
-                alt=""
-                class="rounded-[1rem]"
-            />
-        </div>
-        <!-- SONGS -->
-        <div class="w-[35rem] h-[3.5rem] bg-bg-music rounded-[1rem] mt-[2.3rem] px-[0.3rem] py-[0.3rem] gap-[1rem] 
-        flex justify-between items-center">
-            <button class="w-[17.5rem] h-full rounded-[1rem] bg-text-pink flex justify-center items-center gap-[1rem]">
-                <img src="Icons/mdi_music-white.svg"
-                     alt=""
-                     class="w-[2.5rem] h-[2.5rem]"
+<body class="block md:hidden h-screen bg-music-page bg-cover bg-center">
+    <div id = "music1">
+        <div class="absolute inset-0 backdrop-blur-[3rem] flex flex-col justify-start items-center">
+            <!-- Header -->
+            <div class="w-full h-[1.5rem] mt-[1.6rem] px-[1rem] flex justify-between items-center">
+                <p id="time" class="font-inter font-medium text-[1.5rem] text-white">
+                    10:00
+                </p>
+                <img src="./Icons/header-symbols.svg"
+                        alt="" 
+                        class="w-[5.5rem] h-[1.5rem]"
                 />
-                <p class="font-vazirmatn font-extrbold text-[1.4rem] text-white">
-                    Song
-                </p>
-            </button>
-            <button class="w-[8rem] h-[2.5rem] mx-[5.1rem] flex justify-center items-center gap-[1rem]">
-                <img src="Icons/lyrics.svg"
-                     alt=""
-                     class="w-[2.5rem] h-[2.5rem]"
-                />
-                <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
-                    Lyrics
-                </p>
-            </button>
-        </div>
-        <div class="w-full h-[8.8rem] flex justify-between items-center mt-[10.9rem] px-[2.7rem]">
-            <div class="w-[21.2rem] h-full flex flex-col justify-between items-start">
-                <p class="font-vazirmatn font-extrabold text-[3.2rem] text-white">
-                    White America
-                </p>
-                <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
-                    Eminem
-                </p>
             </div>
-            <img src="Icons/heart-light.svg"
-                 alt=""
-                 class="w-[4rem] h-[4rem]"
-            />
-        </div>
-        <div class="w-full h-[15rem] mt-6 flex flex-col justify-between items-center px-[2.7rem]">
-            <div class="w-full h-[5rem] flex flex-col justify-between items-center ">
-                <div id="progress-container" class="bg-black rounded-full w-full h-[1rem] overflow-visible z-50">
-                </div>
-                <div class="w-full h-[3rem] flex justify-between items-center">
-                    <p id="current-time" class="font-vazirmatn font-medium text-[1.4rem] text-white">0:00</p>
-                    <p id="duration" class="font-vazirmatn font-medium text-[1.4rem] text-white">4:03</p>
-                </div>
+            <!-- Navigation Menu -->
+            <div class="w-full h-[5rem] mt-[1.6rem] flex justify-between items-center">
+                <img src="./Icons/ion_arrow-back-outline.svg"
+                        alt=""
+                        class="w-[3.5rem] h-[3.5rem] ml-[1rem]"
+                />
+                <p class="font-vazirmatn font-extrabold text-[3.2rem] text-text-blue">
+                    Mu<span class="text-text-pink">sic</span>
+                </p>
+                <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                        alt=""
+                        class="w-[3.5rem] h-[3.5rem]"
+                />
             </div>
-            <div class="w-full h-[8rem] flex justify-center items-center gap-[4rem]">
-                <img src="Icons/fluent_next-16-filled.svg"
-                     alt=""
-                     class="w-[5rem] h-[5rem] hover:scale-110 transition-all duration-200"
-                     id="prev"
+            <div class="w-[35rem] h-[35rem] mt-[3rem] flex justify-center items-center">
+                <img src="./Pictures/eminem-show.jpg"
+                    alt=""
+                    class="rounded-[1rem]"
                 />
-                <img src="Icons/iconamoon_player-pause-fill-pink.svg"
-                     alt=""
-                     class="w-[8rem] h-[8rem] hover:scale-110 transition-all duration-200"
-                     id="play"
+            </div>
+            <!-- SONGS -->
+            <div class="w-[35rem] h-[3.5rem] bg-bg-music rounded-[1rem] mt-[2.3rem] px-[0.3rem] py-[0.3rem] gap-[1rem] 
+            flex justify-between items-center">
+                <button id="btn-song-1" class="w-[17.5rem] h-full rounded-[1rem] bg-text-pink flex justify-center items-center gap-[1rem]">
+                    <img src="./Icons/mdi_music-white.svg"
+                        alt=""
+                        class="w-[2.5rem] h-[2.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrbold text-[1.4rem] text-white">
+                        Song
+                    </p>
+                </button>
+                <button id="btn-lyrics-1" class="w-[8rem] h-[2.5rem] mx-[5.1rem] flex justify-center items-center gap-[1rem]">
+                    <img src="./Icons/lyrics.svg"
+                        alt=""
+                        class="w-[2.5rem] h-[2.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Lyrics
+                    </p>
+                </button>
+            </div>
+            <div class="w-full h-[8.8rem] flex justify-between items-center mt-[10.9rem] px-[2.7rem]">
+                <div class="w-[21.2rem] h-full flex flex-col justify-between items-start">
+                    <p class="font-vazirmatn font-extrabold text-[3.2rem] text-white">
+                        White America
+                    </p>
+                    <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                        Eminem
+                    </p>
+                </div>
+                <img src="./Icons/heart-light.svg"
+                    alt=""
+                    class="w-[4rem] h-[4rem]"
                 />
-                <img src="Icons/fluent_next-16-filled.svg"
-                     alt=""
-                     class="w-[5rem] h-[5rem] hover:scale-110 transition-all duration-200 rotate-180"
-                     id="next"
-                />
-                
+            </div>
+            <div class="w-full h-[15rem] mt-6 flex flex-col justify-between items-center px-[2.7rem]">
+                <div class="w-full h-[5rem] flex flex-col justify-between items-center ">
+                    <div id="progress-container" class="bg-black rounded-full w-full h-[1rem] overflow-visible z-50">
+                    </div>
+                    <div class="w-full h-[3rem] flex justify-between items-center">
+                        <p id="current-time" class="font-vazirmatn font-medium text-[1.4rem] text-white">0:00</p>
+                        <p id="duration" class="font-vazirmatn font-medium text-[1.4rem] text-white">4:03</p>
+                    </div>
+                </div>
+                <div class="w-full h-[8rem] flex justify-center items-center gap-[4rem]">
+                    <img src="./Icons/fluent_next-16-filled.svg"
+                        alt=""
+                        class="w-[5rem] h-[5rem] hover:scale-110 transition-all duration-200"
+                        id="prev"
+                    />
+                    <img src="./Icons/iconamoon_player-pause-fill-pink.svg"
+                        alt=""
+                        class="w-[8rem] h-[8rem] hover:scale-110 transition-all duration-200"
+                        id="play"
+                    />
+                    <img src="./Icons/fluent_next-16-filled.svg"
+                        alt=""
+                        class="w-[5rem] h-[5rem] hover:scale-110 transition-all duration-200 rotate-180"
+                        id="next"
+                    />
+                </div>
             </div>
         </div>
     </div>
+    <div id = "music2" class="hidden">
+        <div class="absolute inset-0 backdrop-blur-[3rem] flex flex-col justify-start items-center">
+            <!-- Header -->
+            <div class="w-full h-[1.5rem] mt-[1.2rem] px-[1rem] flex justify-between items-center">
+                <p id="time" class="font-inter font-medium text-[1.5rem] text-white">
+                    10:00
+                </p>
+                <img src="./Icons/header-symbols.svg"
+                        alt="" 
+                        class="w-[5.5rem] h-[1.5rem]"
+                />
+            </div>
+            <!-- Navigation Menu -->
+            <div class="w-full h-[5rem] mt-[1.2rem] flex justify-between items-center">
+                <img src="./Icons/ion_arrow-back-outline.svg"
+                        alt=""
+                        class="w-[2rem] h-[2rem] ml-[1rem] rounded-full"
+                />
+                <p class="font-vazirmatn font-extrabold text-[3.2rem] text-text-blue">
+                    Mu<span class="text-text-pink">sic</span>
+                </p>
+                <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                        alt=""
+                        class="w-[3.5rem] h-[3.5rem]"
+                />
+            </div>
+            <div class="w-[20rem] h-[20rem] flex justify-center items-center">
+                <img src="./Pictures/eminem-show.jpg"
+                    alt=""
+                    class="rounded-full"
+                />
+            </div>
+            <!-- SONGS -->
+            <div class="w-[35rem] h-[3.5rem] bg-bg-music rounded-[1rem] mt-[1.2rem] px-[0.3rem] py-[0.3rem] gap-[2rem] 
+            flex justify-between items-center">
+                <button id="btn-song-2" class="w-[8rem] h-[2.5rem] mx-[5.1rem] flex justify-center items-center gap-[1rem]">
+                    <img src="./Icons/mdi_music-white.svg"
+                        alt=""
+                        class="w-[2.5rem] h-[2.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Song
+                    </p>
+                </button>
+                <button id="btn-lyrics-2" class="w-[17.5rem] h-full rounded-[1rem] bg-text-pink flex justify-center items-center gap-[1rem]">
+                    <img src="./Icons/lyrics.svg"
+                        alt=""
+                        class="w-[2.5rem] h-[2.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrbold text-[1.4rem] text-white">
+                        Lyrics
+                    </p>
+                </button>
+            </div>
+            <div class="w-full h-[7.6rem] mt-[1.2rem] flex flex-col justify-between items-center px-[8rem]">
+                <p class="font-vazirmatn font-extrabold text-[3.2rem] text-text-pink">
+                    White America
+                </p>
+                <p class="font-vazirmatn font-bold text-[2rem] text-white">
+                    Eminem
+                </p>
+            </div>
+            <!-- LYRICS -->
+            <div class="w-full h-[26rem] mt-[1.3rem] overflow-y-auto overflow-hidden ">
+                <div class="flex flex-col justify-center items-center text-white
+                font-vazirmatn font-normal text-[1.4rem] bg-opacity-60 gap-[1.2rem]">
+                    <p>Look at these eyes baby blue baby just like yourself</p>
+                    <p>If they were brown</p> 
+                    <p>Shady knew shady sits on the shelf</p>
+                    <p>But Shadys cute</p>But Shadys cute
+                    <p>Shady knew Shady's dimples would help</p>
+                    <p>Make ladies swoon baby</p>
+                    <p>Look at myself!</p>
+                    <p>Lets do the math</p>
+                    <p>If i was black i woulda sold half</p>
+                </div>
+            </div>
+                <div class="w-full h-[15rem] mt-10 flex flex-col justify-between items-center px-[2.7rem]">
+                    <div class="w-full h-[5rem] flex flex-col justify-between items-center ">
+                        <div id="progress-container" class="bg-black rounded-full w-full h-[1rem] overflow-visible z-50">
+                        </div>
+                        <div class="w-full h-[3rem] flex justify-between items-center">
+                            <p id="current-time" class="font-vazirmatn font-medium text-[1.4rem] text-white">0:00</p>
+                            <p id="duration" class="font-vazirmatn font-medium text-[1.4rem] text-white">4:03</p>
+                        </div>
+                    </div>
+                <div class="w-full h-[8rem] flex justify-center items-center gap-[4rem]">
+                    <img src="./Icons/fluent_next-16-filled.svg"
+                        alt=""
+                        class="w-[5rem] h-[5rem] hover:scale-110 transition-all duration-200"
+                        id="prev"
+                    />
+                    <img src="./Icons/iconamoon_player-pause-fill-pink.svg"
+                        alt=""
+                        class="w-[8rem] h-[8rem] hover:scale-110 transition-all duration-200"
+                        id="play"
+                    />
+                    <img src="./Icons/fluent_next-16-filled.svg"
+                        alt=""
+                        class="w-[5rem] h-[5rem] hover:scale-110 transition-all duration-200 rotate-180"
+                        id="next"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="audio-player"></audio>
+    <script src="./main.js"></script>
 </body>
 </html>

@@ -1,3 +1,19 @@
+// ------------------- HIỂN THỊ GIỜ -------------------
+function updateHeaderTime() {
+    const timeElement = document.getElementById("time");
+    const now = new Date();
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    timeElement.textContent = `${hours}:${minutes}`;
+}
+updateHeaderTime();
+setInterval(updateHeaderTime, 60000);
+
 // ------------------- HIỂN THỊ THÔNG BÁO -------------------
 function showMessage(msg, callback) {
   const box = document.getElementById("messageBox");
@@ -115,12 +131,33 @@ if (createBtn) {
       });
   }
 
-  const backBtn = document.getElementById("backBtn");
+  const backBtn = document.getElementById("backBtn") || document.getElementById("backBtn1");
   if (backBtn) {
       backBtn.addEventListener("click", () => {
           window.history.back();
       });
   }
 });
+
+// -------------------- CHUYỂN GIỮA MUSIC1 & MUSIC2 --------------------
+const music1 = document.getElementById("music1");
+const music2 = document.getElementById("music2");
+
+const btnLyrics1 = document.getElementById("btn-lyrics-1");
+const btnSong2 = document.getElementById("btn-song-2");
+
+if (btnLyrics1) {
+    btnLyrics1.addEventListener("click", () => {
+        music1.classList.add("hidden");
+        music2.classList.remove("hidden");
+    });
+}
+
+if (btnSong2) {
+    btnSong2.addEventListener("click", () => {
+        music2.classList.add("hidden");
+        music1.classList.remove("hidden");
+    });
+}
 
 
