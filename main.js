@@ -13,7 +13,7 @@ function showMessage(msg, callback) {
 
 
 // ------------------- CHUYỂN TRANG SAU LOADING -------------------
-if(window.location.pathname.includes("loading-page.html")) {
+if(window.location.pathname.includes("index.html")) {
     setTimeout(() => {
         if (!sessionStorage.getItem("redirected")) {
             sessionStorage.setItem("redirected", "true");
