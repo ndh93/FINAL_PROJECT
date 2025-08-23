@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HOME PAGE</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vazirmatn: ['Vazirmatn', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'text-blue': '#0E9EEF',
+                        'text-pink': '#EE10B0',
+                        'button-black':'#1E1E1E',
+                        'border-pink':'#EE10B0',
+                        'border-blue': '#0E9EEF',
+                        'footer': '#0E1920',
+                    },
+                    backgroundImage: {
+                        'home-page': "linear-gradient(270deg, #412C3A -10.35%, #0E1920 141.63%)",
+                        'logo': 'linear-gradient(90deg, #EE10B0 -7.89%, #0E9EEF 132.33%)',
+                        'banner':  "linear-gradient(90.07deg, rgba(99, 93, 93, 0.2) 8.03%, rgba(0, 0, 0, 0) 114.08%), url('./Pictures/baner-eilish.png')",
+                    },
+                }
+            }
+        };
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .shadow-button {
+            box-shadow: -1px 6px 4px 0px rgba(97, 44, 79, 1);
+        }
+        html {
+            font-size: 10px;
+        }
+        @media (max-width: 375px) {
+            html {
+            font-size: 8.5px;
+            }
+        }
+    </style>
+</head>
+<body class="md:hidden h-screen w-full bg-home-page flex flex-col overflow-hidden">
+    <!-- Header -->
+    <div class="shrink-0 px-[1rem]">
+        <div class="w-full h-[1.5rem] mt-[1.6rem] flex justify-between items-center">
+            <p class="font-inter font-medium text-[1.5rem] text-white">
+                10:00
+            </p>
+            <img src="./Icons/header-symbols.svg"
+                 alt="" 
+                 class="w-[5.5rem] h-[1.5rem]"
+            />
+        </div>
+        
+        <!-- Navigation Menu -->
+        <div class="w-full h-[5rem] mt-[1.6rem] flex justify-between items-center">
+            <img src="./Icons/search-outline.svg"
+                 alt=""
+            />
+            <p class="font-vazirmatn font-extrabold text-[3.2rem] text-text-blue">
+                Home
+                <span class="text-text-pink">Page</span>
+            </p>
+            <img src="./Icons/mi-menu.svg"
+                 alt=""
+            />
+        </div>
+    </div>
+     <!-- Main content-->
+     <div class="overflow-y-auto flex-1 px-[1rem] pb-[9.3rem]">
+        <!-- Recommended Songs -->
+        <div class="w-full h-[21.1rem] mt-[1.2rem] flex flex-col justify-between items-center ">
+            <!-- Title -->
+            <div class="w-full h-[3.8rem] flex justify-between items-center">
+                <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                    Recommended
+                    <span class="text-text-pink">Songs</span>
+                </p>
+                <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                    <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                        View all
+                    </p>
+                    <img src="./Icons/next-ltr.svg"
+                         alt=""
+                    />
+                </div>
+            </div>
+            <!-- Songs -->
+            <div class="w-full h-[16.3rem] flex justify-between items-center">
+                <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/as-it-was.jpg"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        As It Was
+                    </p>
+                    <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                        Haryy styles
+                    </p>
+                </div>
+                <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/another-love.png"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Another Love
+                    </p>
+                    <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                        Tom Odell
+                    </p>
+                </div>
+                <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/someone-like-you.png"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Someone Like You
+                    </p>
+                    <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                        Adele
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Recommended Artists -->
+        <div class="w-full h-[16.1rem] mt-[1.1rem] flex flex-col justify-between items-center ">
+            <!-- Title -->
+            <div class="w-full h-[3.8rem] flex justify-between items-center">
+                <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                    Recommended
+                    <span class="text-text-pink">Artists</span>
+                </p>
+                <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                    <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                        View all
+                    </p>
+                    <img src="./Icons/next-ltr.svg"
+                         alt=""
+                    />
+                </div>
+            </div>
+            <!-- Artists -->
+            <div class="w-full h-[11.3rem] flex justify-between items-center">
+                <div id = "eminem" class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                    <img src="./Pictures/Eminem.jpg"
+                         alt="" 
+                         class="w-full h-[8.4rem] rounded-full"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Eminem
+                    </p>
+                </div>
+                <div class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                    <img src="./Pictures/adele.jpg"
+                         alt="" 
+                         class="w-full h-[8.4rem] rounded-full"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Adele
+                    </p>
+                </div>
+                <div class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                    <img src="./Pictures/Lana-Del-Ray.jpg"
+                         alt="" 
+                         class="w-full h-[8.4rem] rounded-full"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Lana Del Ray
+                    </p>
+                </div>
+                <div class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                    <img src="./Pictures/Billie-Eilish.jpg"
+                         alt="" 
+                         class="w-full h-[8.4rem] rounded-full"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Billie Eilish
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Recommended Albums -->
+        <div class="w-full h-[21.1rem] mt-[1.2rem] flex flex-col justify-between items-center ">
+            <!-- Title -->
+            <div class="w-full h-[3.8rem] flex justify-between items-center">
+                <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                    Recommended
+                    <span class="text-text-pink">Albums</span>
+                </p>
+                <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                    <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                        View all
+                    </p>
+                    <img src="./Icons/next-ltr.svg"
+                         alt=""
+                    />
+                </div>
+            </div>
+            <!-- Albums -->
+            <div class="w-full h-[16.3rem] flex justify-between items-center">
+                <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/born-to-die.jpg"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Born To Die
+                    </p>
+                    <div class="w-full h-[1.9rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                            Lana Del Ray
+                        </p>
+                        <img src="./Icons/material-symbols-light-album-outline.svg"
+                             alt="" 
+                             class="w-[1.5rem] h-[1.5rem]"
+                        />
+                    </div>
+                </div>
+                <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/scorpion.jpg"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Scorpion
+                    </p>
+                    <div class="w-full h-[1.9rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                            Drake
+                        </p>
+                        <img src="./Icons/material-symbols-light-album-outline.svg"
+                             alt="" 
+                             class="w-[1.5rem] h-[1.5rem]"
+                        />
+                    </div>
+                </div>
+                <div id ="eminem-Show" class="w-[12rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/eminem-show.jpg"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Eminem Show
+                    </p>
+                    <div class="w-full h-[1.9rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                            Eminem
+                        </p>
+                        <img src="./Icons/material-symbols-light-album-outline.svg"
+                             alt="" 
+                             class="w-[1.5rem] h-[1.5rem]"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner -->
+         <div class="w-full h-[12.4rem] mt-[1.1rem] flex justify-between items-center">
+            <button class="w-[3.5rem] h-[3.5rem] bg-button-black rounded-full flex justify-center items-center">
+                <svg class="w-[3.5rem] h-[3.5rem] text-text-blue hover:text-text-pink transition-colors duration-300">
+                    <use href="./Icons.svg#icon-arrow"></use>
+                </svg>          
+            </button>
+            <div class="w-[30.7rem] h-full px-[1.2rem] bg-banner bg-cover bg-center rounded-[0.5rem] flex flex-col justify-around items-start">
+                <div class="w-[18.5rem] h-[8.3rem] flex flex-col justify-between items-start">
+                    <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">
+                        Billie Eilish
+                    </p>
+                    <p class="font-vazirmatn font-medium text-[0.8rem] text-white text-justify leading-relaxed">
+                        You can have easy access to every song of billie eilish
+                        by just clicking on the <span class="text-text-pink">Listen now</span> botton. You
+                        can also <span class="text-text-blue">follow</span> him too for suppurting him and
+                        keeping it up with what he dose.
+                    </p>
+                </div>
+                <div class="w-[12.1rem] h-[2rem] flex justify-between items-center">
+                    <button class="w-[5.4rem] h-full border border-border-pink rounded-[0.5rem] font-light text-[0.8rem] text-text-pink">
+                        Listen Now
+                    </button>
+                    <button class="w-[5.4rem] h-full border border-border-blue rounded-[0.5rem] font-vazirmatn font-light text-[0.8rem] text-text-blue">
+                        Follow
+                    </button>
+                </div>
+            </div>
+            <button class="w-[3.5rem] h-[3.5rem] bg-button-black rounded-full flex justify-center items-center">
+                <svg class="w-[3.5rem] h-[3.5rem] text-text-blue hover:text-text-pink transition-colors duration-300 rotate-180">
+                    <use href="./Icons.svg#icon-arrow"></use>
+                </svg>          
+            </button>
+         </div>
+        <!-- Recommended Music Video -->
+        <div class="w-full h-[16.8rem] mt-[2rem] flex flex-col justify-between items-center ">
+            <!-- Title -->
+            <div class="w-full h-[3.8rem] flex justify-between items-center">
+                <p class="font-vazirmatn font-bold text-[2.4rem] leading-tight text-white">
+                    Recommended
+                    <span class="text-text-pink">Music Videos</span>
+                </p>
+                <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                    <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                        View all
+                    </p>
+                    <img src="./Icons/next-ltr.svg"
+                         alt=""
+                    />
+                </div>
+            </div>
+            <!-- Music Videos -->
+            <div class="w-full h-[12rem] flex justify-between items-center">
+                <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/newrules.jpg"
+                         alt="" 
+                         class="w-full h-[7.6rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        New Rules
+                    </p>
+                    <div class="w-full h-[1.9rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                            Dualipa
+                        </p>
+                        <p class="font-vazirmatn font-light text-[0.8rem] text-white">
+                            3.7M views
+                        </p>
+                    </div>
+                </div>
+                <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/shake-it-off.jpg"
+                         alt="" 
+                         class="w-full h-[7.6rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Shake It Off
+                    </p>
+                    <div class="w-full h-[1.9rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                            Taylor Swift
+                        </p>
+                        <p class="font-vazirmatn font-light text-[0.8rem] text-white">
+                            4.2M views
+                        </p>
+                    </div>
+                </div>
+                <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/lovely.jpg"
+                         alt="" 
+                         class="w-full h-[7.6rem] rounded-[0.5rem]"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Lovely
+                    </p>
+                    <div class="w-full h-[1.9rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                            Billie, Khalid
+                        </p>
+                        <p class="font-vazirmatn font-light text-[0.8rem] text-white">
+                            2.7M views
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Recommended Mix’s -->
+        <div class="w-full h-[20rem] mt-[1.2rem] flex flex-col justify-between items-center ">
+            <!-- Title -->
+            <div class="w-full h-[3.8rem] flex justify-between items-center">
+                <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                    Recommended
+                    <span class="text-text-pink">Mix's</span>
+                </p>
+                <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                    <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                        View all
+                    </p>
+                    <img src="./Icons/next-ltr.svg"
+                         alt=""
+                    />
+                </div>
+            </div>
+            <!-- Mix's -->
+            <div class="w-full h-[15.2rem] flex justify-between items-center">
+                <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/trending-music.png"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem] object-cover"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Trending
+                    </p>
+                </div>
+                <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/weekly-top-songs.png"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem] object-cover"
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Weekly Top
+                    </p>
+                </div>
+                <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                    <img src="./Pictures/most-view-songs.png"
+                         alt="" 
+                         class="w-full h-[12rem] rounded-[0.5rem] object-cover">
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Most Viewed
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Footer -->
+     <div class="fixed bottom-0 w-full h-[8.5rem] px-[2rem] rounded-t-[2rem] bg-footer flex justify-between items-center">
+         <button class="w-[5rem] h-[7rem] flex flex-col justify-between items-center group" onclick="window.location.href='home-page.html'">
+             <svg class="w-[3.5rem] h-[3.5rem] text-text-blue group-hover:text-text-pink transition-colors duration-300">
+                 <use href="./Icons.svg#icon-home"></use>
+             </svg>
+             <p class="text-[1.4rem] text-text-blue group-hover:text-text-pink">Home</p>
+         </button>
+
+         <button class="w-[5rem] h-[7rem] flex flex-col justify-between items-center group" onclick="window.location.href='discover-page.html'">
+             <svg class="w-[4rem] h-[4rem] text-text-blue group-hover:text-text-pink transition-colors duration-300">
+                 <use href="./Icons.svg#icon-discover"></use>
+             </svg>
+             <p class="text-[1.4rem] text-text-blue group-hover:text-text-pink">Discover</p>
+         </button>
+
+         <button class="w-[5rem] h-[7rem] flex flex-col justify-between items-center group" onclick="window.location.href='albums-page.html'">
+             <svg class="w-[4rem] h-[4rem] text-text-blue group-hover:text-text-pink transition-colors duration-300">
+                 <use href="./Icons.svg#icon-albums"></use>
+             </svg>
+             <p class="text-[1.4rem] text-text-blue group-hover:text-text-pink">Albums</p>
+         </button>
+
+         <button class="w-[3.85rem] h-[7rem] flex flex-col justify-between items-center group">
+             <svg class="w-[3.6rem] h-[3.5rem] text-text-blue group-hover:text-text-pink transition-colors duration-300">
+                 <use href="./Icons.svg#icon-library"></use>
+             </svg>
+             <p class="text-[1.4rem] text-text-blue group-hover:text-text-pink">Library</p>
+         </button>
+     </div>
+    <script src="./main.js"></script>
+</body>
+</html>

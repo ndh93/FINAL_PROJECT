@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ARTIST PAGE</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vazirmatn: ['Vazirmatn', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'text-blue': '#0E9EEF',
+                        'text-pink': '#EE10B0',
+                        'bg-songs': '#1E1E1E',
+                    },
+                    backgroundImage: {
+                        'artist-page': "linear-gradient(270deg, #412C3A -10.35%, #0E1920 141.63%)",
+                        'content-artist': "linear-gradient(90.22deg, #0C0B0B 12.99%, rgba(0, 0, 0, 0.0230101) 114.84%)",
+                        'logo': 'linear-gradient(90deg, #EE10B0 -7.89%, #0E9EEF 132.33%)',
+                        'thumbnail':  "url('Pictures/eminem_artist.png')",
+                    },
+                }
+            }
+        };
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .shadow-artist {
+            box-shadow: 3px 12px 4px 0px rgba(0, 0, 0, 0.3);
+            
+        }
+        .shadow-song {
+            box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.29);
+            
+        }
+        html {
+            font-size: 10px;
+        }
+        @media (max-width: 375px) {
+            html {
+            font-size: 8.5px;
+            }
+        }
+    </style>
+</head>
+<body class="md:hidden w-full bg-artist-page flex flex-col justify-between overflow-hidden">
+    <!-- Header -->
+     <div class="shrink-0">
+        <div class="w-full h-[1.5rem] mt-[1.6rem] px-[1rem] flex justify-between items-center">
+            <p class="font-inter font-medium text-[1.5rem] text-white">
+                10:00
+            </p>
+            <img src="./Icons/header-symbols.svg"
+                 alt="" 
+                 class="w-[5.5rem] h-[1.5rem]"
+            />
+        </div>
+        
+        <!-- Navigation Menu -->
+        <div class="w-full h-[5rem] mt-[1.6rem] flex justify-between items-center">
+            <img id = "backBtn" src="./Icons/ion_arrow-back-outline.svg"
+                 alt=""
+                 class="w-[3.5rem] h-[3.5rem] ml-[1rem]"
+            />
+            <p class="font-vazirmatn font-extrabold text-[3.2rem] text-text-pink">
+                Artist
+            </p>
+            <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                 alt=""
+                 class="w-[3.5rem] h-[3.5rem]"
+            />
+        </div>
+    </div>
+     <div class="px-[1rem] w-full">
+        <div class="w-full h-screen pb-[3rem] overflow-hidden bg-content-artist flex flex-col rounded-[1rem]">
+            <div class="shrink-0">
+                <div class="w-full h-[21.6rem] bg-thumbnail bg-cover bg-center shadow-artist 
+                flex flex-col justify-between items-start rounded-[1rem] px-[2rem] py-[2rem]">
+                    <img src="./Icons/material-symbols_verified.svg"
+                        alt=""
+                        class="w-[2.4rem] h-[2.4rem] self-end" 
+                    />
+                    <p class="font-vazirmatn font-extrabold text-[3.2rem] text-white">
+                        Eminem
+                    </p>
+                </div>
+            </div>
+            <div class="overflow-y-auto overflow-x-hidden flex-1 mt-[1rem] mx-[1rem] mb-[10rem]">
+                <div class="w-full h-[33rem] flex flex-col justify-between items-center">
+                    <div class="w-full h-[3.8rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                            Popular
+                            <span class="text-text-pink">Songs</span>
+                        </p>
+                        <div class="w-[9.4rem] flex justify-between items-center opacity-80 ">
+                            <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">Time</p>
+                            <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">More</p>
+                        </div>
+                    </div>
+                    <!-- Without Me -->
+                    <div class="w-full h-[5rem] mt-[1rem] flex justify-between items-center rounded-[0.5rem] shadow-song bg-bg-songs">
+                        <div class="w-[26.6rem] h-full flex justify-start items-center gap-[0.6rem] px-[0.5rem]">
+                            <button class="w-[1rem] h-[2.5rem] font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                1
+                            </button> 
+                            <img src="Pictures/eminem-show.jpg"
+                                alt=""
+                                class="w-[5rem] h-[5rem]"
+                            />
+                            <div class="w-[18.8rem] h-full flex flex-col justify-between items-start py-[0.5rem]">
+                                <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                    Without Me
+                                </p>
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    Eminem
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-[8.7rem] h-full flex justify-between items-center">
+                            <p class="w-[2.8rem] h-full font-vazirmatn font-normal text-white text-[1.4rem] flex items-center">
+                                4:50
+                            </p>
+                            <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                                alt=""
+                                class="w-[2.5rem] h-[2.5rem]"
+                            />
+                        </div>
+                    </div>
+                    <!-- Mocking Bird -->
+                    <div class="w-full h-[5rem] mt-[1rem] flex justify-between items-center rounded-[0.5rem] shadow-song bg-bg-songs">
+                        <div class="w-[26.6rem] h-full flex justify-start items-center gap-[0.6rem] px-[0.5rem]">
+                            <button class="w-[1rem] h-[2.5rem] font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                2
+                            </button> 
+                            <img src="Pictures/mocking-bird.jpg"
+                                alt=""
+                                class="w-[5rem] h-[5rem]"
+                            />
+                            <div class="w-[18.8rem] h-full flex flex-col justify-between items-start py-[0.5rem]">
+                                <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                    Mocking Bird
+                                </p>
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    Eminem
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-[8.7rem] h-full flex justify-between items-center">
+                            <p class="w-[2.8rem] h-full font-vazirmatn font-normal text-white text-[1.4rem] flex items-center">
+                                4:10
+                            </p>
+                            <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                                alt=""
+                                class="w-[2.5rem] h-[2.5rem]"
+                            />
+                        </div>
+                    </div>
+                    <!-- The Real Slim Shady -->
+                    <div class="w-full h-[5rem] mt-[1rem] flex justify-between items-center rounded-[0.5rem] shadow-song bg-bg-songs">
+                        <div class="w-[26.6rem] h-full flex justify-start items-center gap-[0.6rem] px-[0.5rem]">
+                            <button class="w-[1rem] h-[2.5rem] font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                3
+                            </button> 
+                            <img src="Pictures/the-real-ream-shady.jpg"
+                                alt=""
+                                class="w-[5rem] h-[5rem]"
+                            />
+                            <div class="w-[18.8rem] h-full flex flex-col justify-between items-start py-[0.5rem]">
+                                <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                    The Real Slim Shady
+                                </p>
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    Eminem
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-[8.7rem] h-full flex justify-between items-center">
+                            <p class="w-[2.8rem] h-full font-vazirmatn font-normal text-white text-[1.4rem] flex items-center">
+                                4:44
+                            </p>
+                            <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                                alt=""
+                                class="w-[2.5rem] h-[2.5rem]"
+                            />
+                        </div>
+                    </div>
+                    <!-- Lose Yourself -->
+                    <div class="w-full h-[5rem] mt-[1rem] flex justify-between items-center rounded-[0.5rem] shadow-song bg-bg-songs">
+                        <div class="w-[26.6rem] h-full flex justify-start items-center gap-[0.6rem] px-[0.5rem]">
+                            <button class="w-[1rem] h-[2.5rem] font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                4
+                            </button> 
+                            <img src="Pictures/lose-yourself.jpg"
+                                alt=""
+                                class="w-[5rem] h-[5rem]"
+                            />
+                            <div class="w-[18.8rem] h-full flex flex-col justify-between items-start py-[0.5rem]">
+                                <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                    Lose Yourself
+                                </p>
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    Eminem
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-[8.7rem] h-full flex justify-between items-center">
+                            <p class="w-[2.8rem] h-full font-vazirmatn font-normal text-white text-[1.4rem] flex items-center">
+                                5:22
+                            </p>
+                            <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                                alt=""
+                                class="w-[2.5rem] h-[2.5rem]"
+                            />
+                        </div>
+                    </div>
+                    <!-- Godzila -->
+                    <div class="w-full h-[5rem] mt-[1rem] flex justify-between items-center rounded-[0.5rem] shadow-song bg-bg-songs">
+                        <div class="w-[26.6rem] h-full flex justify-start items-center gap-[0.6rem] px-[0.5rem]">
+                            <button class="w-[1rem] h-[2.5rem] font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                5
+                            </button> 
+                            <img src="Pictures/eminem-show.jpg"
+                                alt=""
+                                class="w-[5rem] h-[5rem]"
+                            />
+                            <div class="w-[18.8rem] h-full flex flex-col justify-between items-start py-[0.5rem]">
+                                <p class="font-vazirmatn font-semibold text-[1.6rem] text-white">
+                                    Godzila
+                                </p>
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    Eminem
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-[8.7rem] h-full flex justify-between items-center">
+                            <p class="w-[2.8rem] h-full font-vazirmatn font-normal text-white text-[1.4rem] flex items-center">
+                                3:30
+                            </p>
+                            <img src="./Icons/iconamoon_menu-kebab-vertical-bold-pink.svg"
+                                alt=""
+                                class="w-[2.5rem] h-[2.5rem]"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="w-[8.8rem] h-[2.4rem] mt-[1.5rem] mx-[16.6rem] bg-text-pink rounded-[0.5rem] flex justify-center items-center">
+                    <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                        Show All
+                    </p>
+                </div>
+                <!-- Artist Albums -->
+                <div class="w-full h-[21.1rem] mt-[1.2rem] flex flex-col justify-between items-center ">
+                    <!-- Title -->
+                    <div class="w-full h-[3.8rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                            Artist
+                            <span class="text-text-pink">Albums</span>
+                        </p>
+                        <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                            <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                                View all
+                            </p>
+                            <img src="./Icons/next-ltr.svg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <!-- Albums -->
+                    <div class="w-full h-[16.3rem] flex justify-between items-center">
+                        <div id = "eminem-Show" class="w-[12rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/eminem-show.jpg"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem]"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Eminem Show
+                            </p>
+                            <div class="w-full h-[1.9rem] flex justify-between items-center">
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    2002
+                                </p>
+                                <img src="./Icons/material-symbols-light-album-outline.svg"
+                                    alt="" 
+                                    class="w-[1.5rem] h-[1.5rem]"
+                                />
+                            </div>
+                        </div>
+                        <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/mocking-bird.jpg"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem]"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Eminem
+                            </p>
+                            <div class="w-full h-[1.9rem] flex justify-between items-center">
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    2004
+                                </p>
+                                <img src="./Icons/material-symbols-light-album-outline.svg"
+                                    alt="" 
+                                    class="w-[1.5rem] h-[1.5rem]"
+                                />
+                            </div>
+                        </div>
+                        <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/eminem-show.jpg"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem]"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Recovery
+                            </p>
+                            <div class="w-full h-[1.9rem] flex justify-between items-center">
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    2010
+                                </p>
+                                <img src="./Icons/material-symbols-light-album-outline.svg"
+                                    alt="" 
+                                    class="w-[1.5rem] h-[1.5rem]"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Songs -->
+                <div class="w-full h-[21.8rem] mt-[1.2rem] flex flex-col justify-between items-center ">
+                    <!-- Title -->
+                    <div class="w-full h-[3.8rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                            Single
+                            <span class="text-text-pink">Songs</span>
+                        </p>
+                        <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                            <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                                View all
+                            </p>
+                            <img src="./Icons/next-ltr.svg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <!-- Single -->
+                    <div class="w-full h-[16.3rem] flex justify-between items-center">
+                        <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/lace-it.jpg"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem]"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Lace It
+                            </p>
+                            <div class="w-full h-[1.9rem] flex justify-between items-center">
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    2023
+                                </p>
+                                <img src="./Icons/mdi_music.svg"
+                                    alt="" 
+                                    class="w-[1.5rem] h-[1.5rem]"
+                                />
+                            </div>
+                        </div>
+                        <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/realest.jpg"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem]"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Realest
+                            </p>
+                            <div class="w-full h-[1.9rem] flex justify-between items-center">
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    2022
+                                </p>
+                                <img src="./Icons/mdi_music.svg"
+                                    alt="" 
+                                    class="w-[1.5rem] h-[1.5rem]"
+                                />
+                            </div>
+                        </div>
+                        <div class="w-[12rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/eminem-show.jpg"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem]"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Killshot
+                            </p>
+                            <div class="w-full h-[1.9rem] flex justify-between items-center">
+                                <p class="font-vazirmatn font-light text-[1.2rem] text-white">
+                                    2018
+                                </p>
+                                <img src="./Icons/mdi_music.svg"
+                                    alt="" 
+                                    class="w-[1.5rem] h-[1.5rem]"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Artist Playlist -->
+                <div class="w-full h-[20rem] mt-[1.2rem] flex flex-col justify-between items-center ">
+                    <!-- Title -->
+                    <div class="w-full h-[3.8rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                            Artist
+                            <span class="text-text-pink">Playlist</span>
+                        </p>
+                        <div class="w-[7rem] h-[1.8rem] flex justify-between items-center">
+                            <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                                View all
+                            </p>
+                            <img src="./Icons/next-ltr.svg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <!-- Mix's -->
+                    <div class="w-full h-[15.2rem] flex justify-between items-center">
+                        <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/full-collection.png"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem] object-cover"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Full Collection
+                            </p>
+                        </div>
+                        <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/best-of-eminem.png"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem] object-cover"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Best of Eminem
+                            </p>
+                        </div>
+                        <div class="w-[12.5rem] h-full flex flex-col justify-between items-start">
+                            <img src="Pictures/old-song.png"
+                                alt="" 
+                                class="w-full h-[12rem] rounded-[0.5rem] object-cover">
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Old Song
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Popular Artists -->
+                <div class="w-full h-[16.1rem] mt-[1.1rem] flex flex-col justify-between items-center ">
+                    <!-- Title -->
+                    <div class="w-full h-[3.8rem] flex justify-between items-center">
+                        <p class="font-vazirmatn font-bold text-[2.4rem] text-white">
+                            Eminem Fans 
+                            <span class="text-text-pink">Also Listen To</span>
+                        </p>
+                        <div class="w-[6.7rem] h-[1.8rem] flex justify-between items-center">
+                            <p class="font-vazirmatn font-normal text-[1.4rem] text-text-blue">
+                                View all
+                            </p>
+                            <img src="./Icons/next-ltr.svg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <!-- Artists -->
+                    <div class="w-full h-[11.3rem] flex justify-between items-center">
+                        <div class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                            <img src="Pictures/50cent.jpg" 
+                                alt="" 
+                                class="w-full h-[8.4rem] rounded-full"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                50 Cent
+                            </p>
+                        </div>
+                        <div class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                            <img src="Pictures/tupac.jpg"
+                                alt="" 
+                                class="w-full h-[8.4rem] rounded-full"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                Tupac
+                            </p>
+                        </div>
+                        <div class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                            <img src="Pictures/snoop-dog.jpg"
+                                alt="" 
+                                class="w-full h-[8.4rem] rounded-full"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white text-center">
+                                Snoop Dog
+                            </p>
+                        </div>
+                        <div class="w-[8.4rem] h-full flex flex-col justify-between items-center">
+                            <img src="Pictures/jayz.jpg"
+                                alt="" 
+                                class="w-full h-[8.4rem] rounded-full"
+                            />
+                            <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                                JayZ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="audio-player"> </audio>
+    <script src="./main.js"></script>
+</body>
+</html>

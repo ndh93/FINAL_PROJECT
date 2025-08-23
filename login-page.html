@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LOGIN PAGE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vazirmatn: ['Vazirmatn', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'login-page': '#412C3A',
+                        'button-colors': '#612C4F',
+                        'button-login': '#EE10B0',
+                        'button-signup': '#0E9EEF'
+                    },
+                    backgroundImage: {
+                        'login': "linear-gradient(0deg, rgba(65, 44, 58, 0.8), rgba(65, 44, 58, 0.8)), url('./Pictures/background.jpg')",
+                        'logo': 'linear-gradient(90deg, #EE10B0 -7.89%, #0E9EEF 132.33%)',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .shadow-button {
+            box-shadow: -1px 6px 4px 0px rgba(97, 44, 79, 1);
+        }
+        
+        html {
+            font-size: 10px;
+        }
+        @media (max-width: 375px) {
+            html {
+            font-size: 8.5px;
+            }
+        }
+    </style>
+</head>
+
+<body class="block md:hidden h-screen bg-login bg-cover bg-center flex flex-col justify-start items-center">
+    <div class="w-full rounded-b-[4rem] flex flex-col justify-start items-center bg-login-page">
+        <!-- Header -->
+        <div class="w-full h-[1.5rem] mt-6 px-[2.4rem] flex justify-between items-center">
+            <p class="font-inter font-medium text-[1.5rem] text-white">
+                10:00
+            </p>
+            <img src="./Icons/header-symbols.svg"
+                 alt="Status Icons"
+                 class="w-[5.5rem] h-[1.5rem]"
+            />
+        </div>
+
+        <!-- Logo-->
+        <div class="w-full h-[12.4rem] mt-[4.9rem] md:mt-6 px-6 flex flex-col justify-between items-center">
+            <img src="./Pictures/logo-melodies.png"
+                 alt="Melodies Logo"
+                 class="w-[6.8rem] h-[7.7rem]"
+            />
+            <p class="font-vazirmatn font-bold text-[2.4rem] bg-logo bg-clip-text text-transparent">
+                Melodies
+            </p>
+        </div>
+
+        <!-- Form-->
+        <p class="mt-[6rem] mb-[3rem] font-vazirmatn font-bold text-[2.4rem] text-white">
+            Login to Continue
+        </p>
+        <!-- Email Input -->
+        <input type="email"
+               id = "loginEmail" 
+               placeholder="E-Mail"
+               class="w-full max-w-[35rem] h-[4.2rem] mx-16 mt-[1.1rem] px-[1.8rem] rounded-[2rem] 
+                      bg-button-colors font-vazirmatn font-extrabold text-[1.4rem] text-white border-none focus:outline-none"
+        />
+
+        <!-- Password Input -->
+        <div class="w-full max-w-[35rem] h-[4.2rem] mx-16 mt-12 px-[1.8rem] rounded-[2rem] bg-button-colors flex justify-between items-center">
+            <input type="password"
+                   id = "loginPassword" 
+                   placeholder="Password"
+                   class="w-[30rem] bg-transparent border-none focus:outline-none font-vazirmatn font-extrabold text-[1.4rem] text-white" 
+            />
+            <button id="togglePassword" class="w-[2.2rem] h-[1.7rem] border-none focus:outline-none">
+                <img id = "eyeIcon" src="./Icons/solar-eye-off-linear.svg" 
+                     alt="Toggle Password Visibility"
+                />
+            </button>
+        </div>
+
+        <!-- Forgot Password-->
+        <div class="w-full max-w-[35rem] h-[2.8rem] mt-12 flex justify-between items-center">
+            <div class="w-[13rem] h-8 flex justify-center items-center gap-2">
+                <p class="font-vazirmatn font-extrabold text-[1.4rem] text-white">
+                    Forgot password
+                </p>
+                <img src="./Icons/grommet-icons_next.svg"
+                     alt="Arrow Icon"
+                />
+            </div>
+            <button id = "loginBtn" class="w-[10rem] h-full font-vazirmatn font-extrabold text-[1.4rem] text-white rounded-[2rem] bg-button-login">
+                Login
+            </button>
+        </div>
+
+        <!-- Social login -->
+        <div class="w-full max-w-[35rem] h-[4.2rem] my-[6rem] flex justify-between items-center">
+            <!-- Google Login Button -->
+            <button class="w-[14.5rem] h-full rounded-[2rem] border-[0.2rem] border-white flex justify-center items-center gap-[1.2rem]">
+                <img class="w-8 h-8"
+                     src="./Icons/devicon_google.svg" 
+                     alt="Google Icon"
+                />
+                <p class="font-vazirmatn text-[1.4rem] text-white">
+                    Google Login
+                </p>
+            </button>
+            
+            <!-- Facebook Login Button -->
+            <button class="w-[14.5rem] h-full rounded-[2rem] border-[0.2rem] border-white flex justify-center items-center gap-[1.2rem]">
+                <img class="w-8 h-8"
+                     src="./Icons/logos-facebook.svg" 
+                     alt="Facebook Icon" />
+                <p class="font-vazirmatn text-[1.4rem] text-white">
+                    Facebook Login
+                </p>
+            </button>
+        </div>
+    </div>
+    <div class="w-full max-w-[35rem] h-[5.6rem] my-[4.5rem] mx-16 flex justify-between items-center">
+        <div class="w-[21rem] flex flex-col items-start">
+            <p class="font-vazirmatn text-[2rem] text-white">
+                Don't Have An Account
+            </p>
+            <p class="font-vazirmatn text-[1.6rem] text-white">
+                Sign Up Here
+            </p>
+        </div>
+        <button id = "signupBtn" class="w-40 h-[2.9rem] font-vazirmatn font-extrabold text-[1.4rem] text-white rounded-[2rem] bg-button-signup">
+            Sign Up
+        </button>
+    </div>
+    <div id="messageBox" style="
+        display:none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f4b11;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        font-weight: bold;
+        z-index: 9999;
+        ">
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

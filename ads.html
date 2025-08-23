@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Player Demo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body { background: #0E1920; color: white; font-family: 'Vazirmatn', sans-serif; }
+#mini-player { background: #252525/90; border-radius: 0.5rem; padding: 1rem; }
+#bar-before { height: 3px; background: #EE10B0; border-radius: 2px; }
+#bar-after { height: 3px; background: #630A4A; border-radius: 2px; }
+#progress-dot { width: 7px; height: 7px; background: #EE10B0; border-radius: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); }
+</style>
+</head>
+<body>
+
+<h1 class="text-2xl font-bold mb-4">Album Demo</h1>
+
+<!-- Mini Player -->
+<div id="mini-player" class="fixed bottom-4 left-4 right-4 h-[7rem] flex justify-between items-center">
+    <div class="flex items-center gap-4">
+        <img src="Pictures/eminem-show.jpg" class="w-16 h-16 rounded" id="mini-thumb">
+        <div>
+            <p id="mini-title">White America</p>
+            <p id="mini-artist">Eminem</p>
+        </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button id="play-pause"><img id="play-icon" src="Icons/iconamoon_player-play-fill.svg" class="w-8 h-8"></button>
+    </div>
+</div>
+
+<div class="fixed bottom-0 left-0 right-0 h-1">
+    <div id="bar-before" style="width:0%;"></div>
+    <div id="bar-after" style="width:100%;"></div>
+    <div id="progress-dot" style="left:0%;"></div>
+</div>
+
+<audio id="audio-player" src="Music/White-America.mp3"></audio>
+
+<script>
+const audio = document.getElementById('audio-player');
+const playPauseBtn = document.getElementById('play-pause');
+const playIcon = document.getElementById('play-icon');
+const barBefore = document.getElementById('bar-before');
+const barAfter = document.getElementById('bar-after');
+const progressDot = document.getElementById('progress-dot');
+
+let isPlaying = false;
+
+playPauseBtn.addEventListener('click', ()=>{
+    if(!isPlaying){
+        audio.play();
+        isPlaying=true;
+        playIcon.src="Icons/iconamoon_player-pause-fill-pink.svg";
+    } else {
+        audio.pause();
+        isPlaying=false;
+        playIcon.src="Icons/iconamoon_player-play-fill.svg";
+    }
+});
+
+audio.addEventListener('timeupdate', ()=>{
+    const percent = (audio.currentTime / audio.duration)*100 || 0;
+    barBefore.style.width = percent + '%';
+    barAfter.style.width = (100-percent) + '%';
+    progressDot.style.left = percent + '%';
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+        <div class="w-full h-[17rem] mt-6 flex flex-col justify-between items-center px-[2.7rem]">
+            <div class="w-full h-[5rem] flex flex-col justify-between items-center ">
+                <div id="progress-container" class="bg-black rounded-full w-full h-[1rem] overflow-visible z-50">
+                </div>
+                <div class="w-full h-[3rem] flex justify-between items-center">
+                    <p id="current-time" class="font-vazirmatn font-medium text-[1.4rem] text-white">0:00</p>
+                    <p id="duration" class="font-vazirmatn font-medium text-[1.4rem] text-white">4:03</p>
+                </div>
+            </div>
+            <div class="w-full h-[8rem] flex justify-center items-center gap-[4rem] mt-4 ">
+                 <button id = "prev-btn" onclick="prevSong()" class="w-[5rem] h-[5rem]">
+                     <img src="Icons/fluent_next-16-filled.svg" 
+                          alt=""
+                     />
+                 </button>
+                 <button id = "play-pause" onclick="togglePlay()" class="w-[5rem] h-[5rem]">
+                     <img id = "pause-icon" src="Icons/iconamoon_player-pause-fill-pink.svg" 
+                          alt="Pause"
+                     />
+                     <img id = "play-icon" src="Icons/iconamoon_player-play-fill-pink.svg" 
+                          alt="Play" style="display:none;"
+                     />
+                 </button>
+                 <button id = "next-btn" onclick="nextSong()" class="w-[5rem] h-[5rem] rotate-180">
+                     <img src="Icons/fluent_next-16-filled.svg" 
+                          alt=""
+                     />
+                 </button>
+
+            </div>
+        </div>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SIGN IN PAGE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        vazirmatn: ['Vazirmatn', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'login-page': '#412C3A',
+                        'button-colors': '#612C4F',
+                        'button-accounts': '#EE10B0',
+                    },
+                    backgroundImage: {
+                        'login': "linear-gradient(0deg, rgba(65, 44, 58, 0.8), rgba(65, 44, 58, 0.8)), url('./Pictures/background.jpg')",
+                        'logo': 'linear-gradient(90deg, #EE10B0 -7.89%, #0E9EEF 132.33%)',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .shadow-button {
+            box-shadow: -1px 6px 4px 0px rgba(97, 44, 79, 1);
+        }
+        
+        html {
+            font-size: 10px;
+        }
+        @media (max-width: 375px) {
+            html {
+            font-size: 8.5px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-login bg-cover bg-center min-h-screen flex flex-col justify-start items-center">
+    <div class="w-full rounded-b-[4rem] md:rounded-[4rem] flex flex-col justify-start items-center bg-login-page">
+        <!-- HEADER -->
+        <div class="w-full h-[1.5rem] mt-6 px-[2.4rem] flex justify-between items-center">
+            <p class="font-inter font-medium text-[1.5rem] text-white">
+                10:00
+            </p>
+            <img src="./Icons/header-symbols.svg"
+                 alt="Status Icons"
+                 class="w-[5.5rem] h-[1.5rem]"
+            />
+        </div>
+        <!-- Logo -->
+        <div class="md:flex w-full h-[15rem] mt-[1rem] px-6 flex justify-center items-center gap-[0.9rem]">
+            <img src="./Pictures/logo-melodies.png"
+                 alt="Melodies Logo"
+                 class="w-[7rem] h-[8rem]" 
+            />
+            <p class="font-vazirmatn font-bold text-[2.4rem] bg-logo bg-clip-text text-transparent">
+                Melodies
+            </p>
+        </div>
+    </div>
+    <!-- Mobile Navigation Button -->
+    <!-- Mobile Sign In Title -->
+    <p class="block md:hidden mt-[5rem] mb-[3rem] font-vazirmatn font-bold text-[2.4rem] text-white">
+        Sign In To Continue
+    </p>
+    
+    <form id = "signupForm" class = "w-full flex flex-col justify-between items-center">
+        
+        <!-- Mobile Name Input -->
+        <input 
+            type="text"
+            id = "nameUser" 
+            placeholder="Name"
+            required 
+            oninvalid="this.setCustomValidity('Vui lòng nhập họ và tên đầy đủ')"
+            oninput = "this.setCustomValidity('')"
+            class="w-full max-w-[35rem] h-[4.2rem] mx-auto px-[1.8rem] rounded-[2rem] 
+                    bg-button-colors font-vazirmatn font-extrabold text-[1.4rem] text-white border-none focus:outline-none"
+        />
+
+        <!-- Mobile Email Input -->
+        <input 
+            type="email"
+            id = "emailUser" 
+            placeholder="E-Mail"
+            required
+            oninvalid="this.setCustomValidity('Email không hợp lệ! Ví dụ: abc@gmail.com')"
+            oninput="this.setCustomValidity('')"
+            class="w-full max-w-[35rem] h-[4.2rem] mx-auto mt-[1.8rem] px-[1.8rem] rounded-[2rem] 
+                    bg-button-colors font-vazirmatn font-extrabold text-[1.4rem] text-white border-none focus:outline-none"
+        /> 
+
+        <!-- Mobile Password Input -->
+        <div class="w-full max-w-[35rem] h-[4.2rem] mx-auto mt-[1.8rem] px-[2rem] rounded-[2rem] bg-button-colors flex justify-between items-center">
+            <input 
+                type="password"
+                id = "passwordUser"  
+                placeholder="Password"
+                required minlength = "6"
+                oninvalid="this.setCustomValidity('Mật khẩu có ít nhất 6 kí tự!')"
+                oninput="this.setCustomValidity('')"
+
+                class="w-[30rem] bg-transparent font-vazirmatn font-extrabold text-[1.4rem] text-white border-none focus:outline-none"
+            />
+            <button id="togglePassword" type="button" class="w-[2.2rem] h-[1.7rem]">
+                <img id = "eyeIcon" src="./Icons/solar-eye-off-linear.svg"
+                    alt=""
+                />
+            </button>
+        </div>
+
+        <!-- Mobile Phone Number Input -->
+        <div class="w-full max-w-[35rem] h-[4.2rem] mx-auto mt-[1.8rem] px-[2rem] rounded-[2rem] bg-button-colors flex justify-between items-center">
+            <input 
+                type="tel"
+                id = "phoneUser"
+                required
+                pattern="[0-9]{10}" 
+                oninvalid="this.setCustomValidity('SĐT phải là 10 chữ số!')"
+                oninput="this.setCustomValidity('')"
+                placeholder="Phone Number"
+                class="w-[30rem] bg-transparent font-vazirmatn font-extrabold text-[1.4rem] text-white border-none focus:outline-none"
+            />
+        </div>
+            <!-- Mobile Sign Up Button -->
+        <button 
+                id = "createAccount"
+                type ="button" 
+                class ="w-[17.9rem] h-[3.7rem] mt-[5rem] 
+                font-vazirmatn font-extrabold text-[1.4rem] text-white rounded-[2rem] bg-button-accounts">
+            Create an account
+        </button>
+        <button id = "backBtn" type = "button" class="w-16 h-16 mt-[3rem]">
+            <img src="./Icons/arrow-back-outline.svg"
+                alt="Back Arrow"
+            />
+        </button>
+    </form>
+    <div id="messageBox" style="
+        display:none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #044306;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 8px;
+        font-weight: bold;
+        z-index: 9999;
+        ">
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
